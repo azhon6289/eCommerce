@@ -1,0 +1,101 @@
+<DOCTYPE html>
+<html>
+		<head>
+			<title> Brawlmart </title>
+			<style>
+				img {width:300px}
+				input {width:20px}
+				h1 {color: cyan;}
+				body{background-color: teal;}
+			</style> 
+			<script>
+				function checkout(){
+					var customersubtotal = qprice1 + qprice2 + qprice3 + qprice4 + qprice5 + qprice6 + qprice7;
+					var total = document.getElementById("total");
+					var tax = customersubtotal * 0.0875;
+					var totalAmt = tax + customersubtotal;
+					
+					var quantity1 = document.getElementById("quantity1");
+					var quantity2 = document.getElementById("quantity2");
+					var quantity3 = document.getElementById("quantity3");
+					var quantity4 = document.getElementById("quantity4");
+					var quantity5 = document.getElementById("quantity5");
+					var quantity6 = document.getElementById("quantity6");
+					var quantity7 = document.getElementById("quantity7");
+					
+					var qprice1 = parseInt(quantity1.value*322);
+					var qprice2 = parseInt(quantity2.value*69.99);
+					var qprice3 = parseInt(quantity3.value*350);
+					var qprice4 = parseInt(quantity4.value*400);
+					var qprice5 = parseInt(quantity5.value*12);
+					var qprice6 = parseInt(quantity6.value*360);
+					var qprice7 = parseInt(quantity7.value*420);
+					
+					var build ="";
+					build += "Subtotal: " + customersubtotal.value + "<br>";
+					build += "	   Tax: " + tax.toFixed(2) + "<br>";
+					build += "_____________________" + "<br>";
+					build += "	 Total: " + totalAmt.toFixed(2) + "<br>";
+					
+					total.innerHTML = build;
+			
+				}
+			</script>
+		</head>
+		<body>
+			<div>
+			
+				<h1> Arcanite Reaper </h1>
+				<img src="Arcanite Reaper.jpg" ><br>
+				<span>$322</span>
+				<p> No… actually you should fear the Reaper. </p>
+				
+				Quantity:<input type="text" id="quantity1">
+				
+				<h1> Scotsman's Skullcutter </h1>
+				<img src="Scotsman's Skullcutter.jpg" ><br>
+				<span>$69.99</span>
+				<p> Random crits EVERYDAY! </p>
+				
+				Quantity:<input type="text" id="quantity2">
+				
+				<h1> Galatine </h1>
+				<img src="Galatine.png" ><br>
+				<span>$350</span>
+				<p> Warframe Tested. Tenno Approved. </p>
+				
+				Quantity:<input type="text" id="quantity3">
+				
+				<h1> Twin Warglaives </h1>
+				<img src="Twin Warglaives.jpg" ><br>
+				<span>$400</span>
+				<p> You are not prepared! </p>
+				
+				Quantity:<input type="text" id="quantity4">
+				
+				<h1> Bonus Ducks </h1>
+				<img src="Bonus Ducks.png" ><br>
+				<span>$12</span>
+				<p> Bonus Ducks! (Comes with 12 ducks total!) </p>
+				
+				Quantity:<input type="text" id="quantity5">
+				
+				<h1> AWPer Hand </h1>
+				<img src="AWPer Hand.png" ><br>
+				<span>$360</span>
+				<p> Start some MLG 360 No-Scope montages with the best Sniper Rifle available. Not recommanded for Kids under 15. </p>
+				
+				Quantity:<input type="text" id="quantity6">
+				
+				<h1> MLG Cigar </h1>
+				<img src="Cigar.png" ><br>
+				<span>$420</span>
+				<p> 420 Blazin it! #SmokeWeedEveryDay </p>
+				
+				Quantity:<input type="text" id="quantity7"><br>
+				
+			<button onclick="checkout()"> Checkout </button>
+			<div id="total"></div>	
+			</div>
+		</body>
+	</html>
